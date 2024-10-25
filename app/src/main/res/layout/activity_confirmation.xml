@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp"
+    android:background="@android:color/white"
     tools:context=".ConfirmationActivity">
 
     <!-- Judul Halaman -->
@@ -17,54 +18,88 @@
         android:text="Order Food"
         android:textSize="24sp"
         android:textStyle="bold"
+        android:textColor="#FF5722"
         android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"/>
 
-    <!-- Confirmation Nama Makanan -->
-    <TextView
-        android:layout_width="wrap_content"
+    <!-- Card untuk Menampilkan Informasi Pesanan -->
+    <!-- Card untuk Menampilkan Informasi Pesanan -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Food Name: Batagor"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="16dp"
+        app:cardElevation="4dp"
+        app:cardCornerRadius="8dp">
 
-    <!-- Confirmation Jumlah Porsi -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Number of Servings: 2 pax"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="vertical">
 
-    <!-- Confirmation Nama pengorder -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ordering Name: Usep"
-        android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+            <!-- Confirmation Nama Makanan -->
+            <TextView
+                android:id="@+id/tvFoodName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Food Name"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Input Catatan Tambahan -->
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Additional Notes: Tidak Pedas"
-        android:textSize="18sp"
-        android:layout_marginBottom="16dp"/>
+            <!-- Confirmation Jumlah Porsi -->
+            <TextView
+                android:id="@+id/tvServings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Number of Servings"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
 
-    <!-- Input Catatan Tambahan -->
+            <!-- Confirmation Nama pengorder -->
+            <TextView
+                android:id="@+id/tvOrderingName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ordering Name"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+            <!-- Input Catatan Tambahan -->
+            <TextView
+                android:id="@+id/tvNotes"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Additional Notes"
+                android:textSize="18sp"
+                android:textColor="@color/black"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <!-- Pesan Terima Kasih -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Thanks for your order and please wait for delivering by nearest courier"
         android:textStyle="bold"
         android:textSize="18sp"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="8dp"
+        android:textColor="#FF5722"/>
 
+    <!-- Tombol Kembali ke Menu -->
     <Button
         android:id="@+id/backtoMenu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back to Menu" />
+        android:text="Back to Menu"
+        android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="16dp"/>
 
 </LinearLayout>

@@ -6,10 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_marginTop="25dp"
-    android:layout_marginLeft="25dp"
-    android:layout_marginRight="25dp"
-    android:layout_marginBottom="25dp"
+    android:layout_margin="25dp"
+    android:background="@android:color/white"
+    android:padding="16dp"
     tools:context=".MainActivity">
 
     <!-- Logo Aplikasi -->
@@ -26,9 +25,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_username"
-        android:drawableLeft="@drawable/ic_person"
+        android:drawableStart="@drawable/ic_person"
         android:padding="12dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF5722"
         android:inputType="text"/>
 
     <!-- Password Field -->
@@ -37,19 +37,21 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/hint_password"
-        android:drawableLeft="@drawable/ic_lock"
+        android:drawableStart="@drawable/ic_lock"
         android:padding="12dp"
         android:layout_marginBottom="16dp"
+        android:backgroundTint="#FF5722"
         android:inputType="textPassword"/>
 
-    <!-- Button Login -->
+    <!-- Button Register -->
     <Button
         android:id="@+id/RegisterBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/register"
-        android:layout_gravity="center_horizontal"
         android:textColor="@android:color/white"
+        android:backgroundTint="#FF5722"
+        android:layout_gravity="center_horizontal"
         android:layout_marginBottom="16dp"/>
 
 </LinearLayout>

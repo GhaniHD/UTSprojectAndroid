@@ -20,18 +20,33 @@ class MainActivity : AppCompatActivity() {
 
         val registerButton = findViewById<TextView>(R.id.tvRegister)
         registerButton.setOnClickListener{
-            val intent = Intent (this , RegisterActivity::class.java)
+            val intent = Intent (this, RegisterActivity::class.java)
             startActivity(intent)
         }
-
 
         val loginButton = findViewById<Button>(R.id.btnLogin)
         loginButton.setOnClickListener{
             val username = findViewById<EditText>(R.id.etUsername).text.toString()
-            val passwoard = findViewById<EditText>(R.id.etPassword).text.toString()
-            if (username == "GhaniHd" && passwoard == "1234"){
-                val intent = Intent (this , ListFoodActivity::class.java)
-                startActivity(intent)
+            val password = findViewById<EditText>(R.id.etPassword).text.toString()
+
+            when {
+                username.isEmpty() -> {
+                    // Pesan error jika username kosong
+                    showError("Username is required")
+                }
+                password.isEmpty() -> {
+                    // Pesan error jika password kosong
+                    showError("Password is required")
+                }
+                username == "ghanihd" && password == "1234" -> {
+                    // Login berhasil, lanjut ke halaman berikutnya
+                    val intent = Intent(this, ListFoodActivity::class.java)
+                    startActivity(intent)
+                }
+                else -> {
+                    // Pesan error jika username atau password salah
+                    showError("Invalid username or password")
+                }
             }
         }
 
@@ -40,5 +55,10 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+    }
+
+    // Fungsi untuk menampilkan pesan error
+    private fun showError(message: String) {
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }
